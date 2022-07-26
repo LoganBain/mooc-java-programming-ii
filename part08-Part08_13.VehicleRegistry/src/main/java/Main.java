@@ -21,7 +21,7 @@ public class Main {
             finnishPlates.add(newLi);
         }
         System.out.println("Finnish: " + finnishPlates);
-        // if the equals-method hasn't been overwritten, the same license number will be added to the list againg
+        // if the equals-method hasn't been overwritten, the same license number will be added to the list again
         
         HashMap<LicensePlate, String> owners = new HashMap<>();
         owners.put(li1, "Arto");
