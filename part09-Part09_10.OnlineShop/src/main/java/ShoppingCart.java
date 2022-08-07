@@ -22,13 +22,10 @@ public class ShoppingCart {
     }
 
     public void add(String product, int price) {
-        if (products.keySet().contains(product)) {
-            products.get(product).increaseQuantity();
-            return;
-        }
-        products.put(product, new Item(product, 1, price));
+        products.putIfAbsent(product, new Item(product, 0, price));
+        products.get(product).increaseQuantity();
     }
-    
+
     public int price() {
         int totalPrice = 0;
         for (Item product : products.values()) {
