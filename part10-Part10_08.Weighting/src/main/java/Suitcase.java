@@ -20,22 +20,25 @@ public class Suitcase {
     }
 
     public int totalWeight() {
-        int summa = 0;
-        int indeksi = 0;
-        while (indeksi < this.Items.size()) {
-        summa += this.Items.get(indeksi).getweight();
-        indeksi++;
-        }
-        return summa;
+//        int summa = 0;
+//        int indeksi = 0;
+//        while (indeksi < this.Items.size()) {
+//        summa += this.Items.get(indeksi).getWeight();
+//        indeksi++;
+//        }
+        return Items.stream()
+                .map(i -> i.getWeight())
+                .reduce(0, (previous, current) -> previous + current);
     }
 
     public void printItems() {
-        int indeksi = 0;
-        while (indeksi < this.Items.size()) {
-        Item t = this.Items.get(indeksi);
-        System.out.println(t);
-        indeksi++;
-        }
+//        int indeksi = 0;
+//        while (indeksi < this.Items.size()) {
+//        Item t = this.Items.get(indeksi);
+//        System.out.println(t);
+//        indeksi++;
+//        }
+        Items.stream().forEach(n -> System.out.println(n));
     }
 
     public Item heaviestItem() {
