@@ -1,6 +1,6 @@
 
 
-public class Card {
+public class Card implements Comparable {
 
     private int value;
     private Suit suit;
@@ -36,6 +36,20 @@ public class Card {
 
     public Suit getSuit() {
         return suit;
+    }
+
+    @Override
+    public int compareTo(Object obj) {
+        if (!(obj instanceof Card)) {
+            throw new IllegalArgumentException("Object is not of class Card");
+        }
+        Card compared = (Card) obj;
+        
+        if (compared.getValue() == this.value) {
+            return this.suit.ordinal() - compared.getSuit().ordinal();
+        }
+        
+        return this.value - compared.getValue();
     }
 
 }
