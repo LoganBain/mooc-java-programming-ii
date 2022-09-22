@@ -12,7 +12,7 @@ public class Program {
         int amountToPrint = Integer.parseInt(scanner.nextLine());
         
         for (int i = 1; i <= amountToPrint; i++) {
-            System.out.println(random.nextInt(10));
+            System.out.println(random.nextInt(11));
         }
     }
 
