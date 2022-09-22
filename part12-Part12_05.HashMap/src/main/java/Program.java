@@ -7,6 +7,7 @@ public class Program {
         Scanner scanner = new Scanner(System.in);
         // You can test the class here
 
+        
     }
 
 }
