@@ -11,7 +11,7 @@ public class Program {
         System.out.println("How many random numbers should be printed?");
         int amountToPrint = Integer.parseInt(scanner.nextLine());
         
-        for (int i = 0; i <= amountToPrint; i++) {
+        for (int i = 1; i <= amountToPrint; i++) {
             System.out.println(random.nextInt(10));
         }
     }
