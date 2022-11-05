@@ -88,6 +88,7 @@ public class SavingsCalculatorApplication extends Application {
             updateSavings(savingsSlider.getValue(), interestSlider.getValue(), savingsSeries, savingsWithInterestSeries);
         });
 
+        updateSavings(savingsSlider.getValue(), interestSlider.getValue(), savingsSeries, savingsWithInterestSeries);
         Scene view = new Scene(layout);
         stage.setScene(view);
         stage.show();
