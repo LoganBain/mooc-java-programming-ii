@@ -35,19 +35,22 @@ public class CollageApplication extends Application {
             while (xCoordinate < width) {
 
                 Color color = imageReader.getColor(xCoordinate, yCoordinate);
-                double red = color.getRed();
-                double green = color.getGreen();
-                double blue = color.getBlue();
+                double red = 1 - color.getRed();
+                double green = 1 - color.getGreen();
+                double blue = 1 - color.getBlue();
                 double opacity = color.getOpacity();
 
                 Color newColor = new Color(red, green, blue, opacity);
 
-                imageWriter.setColor(xCoordinate, yCoordinate, newColor);
+                imageWriter.setColor(xCoordinate / 2, yCoordinate / 2, newColor); // Top left
+                imageWriter.setColor((width/2) + xCoordinate/2, yCoordinate/2, newColor); // Top right
+                imageWriter.setColor((width/2) + xCoordinate/2, (height/2) + yCoordinate/2, newColor); // Bottom right
+                imageWriter.setColor(xCoordinate/2, (height/2) + yCoordinate/2, newColor); // Bottom left
 
-                xCoordinate++;
+                xCoordinate += 2;
             }
 
-            yCoordinate++;
+            yCoordinate += 2;
         }
 
         ImageView image = new ImageView(targetImage);
