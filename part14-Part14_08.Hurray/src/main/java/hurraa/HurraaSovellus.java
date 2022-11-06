@@ -1,5 +1,6 @@
 package hurraa;
 
+import javafx.scene.media.AudioClip;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -15,6 +16,11 @@ public class HurraaSovellus extends Application {
         Button nappi = new Button("Hurraa!");
         pane.setCenter(nappi);
 
+        AudioClip hurraySFX = new AudioClip("file:Applause-Yannick_Lemieux.wav");
+        
+        nappi.setOnAction((event) -> {
+            hurraySFX.play();
+        });
 
         Scene scene = new Scene(pane, 600, 400);
 
